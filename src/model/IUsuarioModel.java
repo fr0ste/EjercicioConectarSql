@@ -13,6 +13,6 @@ public interface IUsuarioModel{
     public void imprimir(List<Usuario> lista);
     public void eliminarRegistro(Usuario usuario);
     public Usuario buscarRegistro(int idUsuario); 
-    public void actualizarRegistro(Usuario usuario, Usuario usuarioNuevo);
+    public void actualizarRegistro(Usuario usuario, int id);
     
 }
