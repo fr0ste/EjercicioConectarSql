@@ -1,6 +1,8 @@
 package entity;
 
-public class Rol {
+import entity.base.IRegistroEntityBase;
+
+public class Rol implements IRegistroEntityBase{
     
     private int idRol;
     private String rol;
@@ -27,6 +29,16 @@ public class Rol {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    @Override
+    public int getId() {
+        return getIdRol();
+    }
+
+    @Override
+    public void setId(int id) {
+        setIdRol(id);
     }
     
     

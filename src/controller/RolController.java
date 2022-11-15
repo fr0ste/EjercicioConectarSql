@@ -1,19 +1,25 @@
 package controller;
 
+import controller.base.RegistroControllerBase;
 import entity.Rol;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import service.IRolService;
 import service.RolServiceImpl;
 
-public class RolController {
-    IRolService service = new RolServiceImpl();
-    
-    public void insertarRegistro(Rol rol){
-        service.insertarRegistro(rol);
+public class RolController extends RegistroControllerBase<Rol> {
+
+    private IRolService service;
+
+    public void insertarRegistro(Rol rol) {
+        service = new RolServiceImpl();
+        super.setService(service);
+        super.setRegistro(rol);
+        super.crearRegistro();
     }
-    
-    public void mostrarRegistros(DefaultTableModel modeloTabla){
+
+    public void mostrarRegistros(DefaultTableModel modeloTabla) {
+        service = new RolServiceImpl();
         List<Rol> listaRol = service.obtenerRegistro();
         modeloTabla.setRowCount(0);
         for (Rol rol : listaRol) {
@@ -23,25 +29,26 @@ public class RolController {
             modeloTabla.addRow(fila);
         }
     }
-    
-    public void eliminarRegistro(Rol rol, DefaultTableModel modeloTabla){
+
+    public void eliminarRegistro(Rol rol, DefaultTableModel modeloTabla) {
+        service = new RolServiceImpl();
         List<Rol> listaRol = service.obtenerRegistro();
-        
+
     }
-    
-     public void eliminarRegistro(Rol rol){
+
+    public void eliminarRegistro(Rol rol) {
+        service = new RolServiceImpl();
         service.eliminarRegistro(rol);
     }
-    
-     public Rol buscarRegistro(int idRol){
-         return service.buscarRegistro(idRol);
-     }
-     
-     public void actualizarRegistro(Rol rol, Rol rolNuevo){
-         
-         service.actualizarRegistro(rol, rolNuevo);
-         
-     }
-     
-     
+
+    public Rol buscarRegistro(int idRol) {
+        service = new RolServiceImpl();
+        return service.buscarRegistro(idRol);
+    }
+
+    public void actualizarRegistro(Rol rol, int id) {
+        service = new RolServiceImpl();
+        service.actualizarRegistro(rol, id);
+    }
+
 }

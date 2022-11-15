@@ -68,12 +68,12 @@
                           <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jSeparator1" max="32767" attributes="0"/>
-                              <Component id="txtNombreRol" alignment="0" pref="351" max="32767" attributes="0"/>
+                              <Component id="txtNombreUsuario" alignment="0" pref="351" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" pref="109" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="136" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -90,13 +90,13 @@
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtNombreRol" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombreUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="252" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="72" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -117,7 +117,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="GESTI&#xd3;N DE ROLES"/>
+            <Property name="text" type="java.lang.String" value="GESTI&#xd3;N DE USUARIO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
@@ -134,10 +134,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nombre de Rol"/>
+            <Property name="text" type="java.lang.String" value="Nombre del usuario"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNombreRol">
+        <Component class="javax.swing.JTextField" name="txtNombreUsuario">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -146,11 +146,11 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Inserte el rol"/>
+            <Property name="text" type="java.lang.String" value="Inserte el nombre de usuario"/>
           </Properties>
           <Events>
-            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreRolMousePressed"/>
-            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreRolMouseReleased"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreUsuarioMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtNombreUsuarioMouseReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">

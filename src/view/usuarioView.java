@@ -20,12 +20,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author labingsw05
  */
-public class RolView extends javax.swing.JFrame {
+public class usuarioView extends javax.swing.JFrame {
 
     private DefaultTableModel modeloTabla;
     private int idRol;
     private String nombreRol;
-    public RolView() {
+    public usuarioView() {
         
         initComponents();
         modeloTabla = (DefaultTableModel) tablaRol.getModel();
@@ -48,7 +48,7 @@ public class RolView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        txtNombreRol = new javax.swing.JTextField();
+        txtNombreUsuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaRol = new javax.swing.JTable();
@@ -62,7 +62,7 @@ public class RolView extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("GESTIÓN DE ROLES");
+        jLabel1.setText("GESTIÓN DE USUARIO");
 
         btnGuardar.setText("Guardar");
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,18 +77,18 @@ public class RolView extends javax.swing.JFrame {
         });
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Nombre de Rol");
+        jLabel2.setText("Nombre del usuario");
 
-        txtNombreRol.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreRol.setForeground(new java.awt.Color(0, 0, 0));
-        txtNombreRol.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtNombreRol.setText("Inserte el rol");
-        txtNombreRol.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtNombreUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombreUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombreUsuario.setText("Inserte el nombre de usuario");
+        txtNombreUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtNombreRolMousePressed(evt);
+                txtNombreUsuarioMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                txtNombreRolMouseReleased(evt);
+                txtNombreUsuarioMouseReleased(evt);
             }
         });
 
@@ -169,10 +169,10 @@ public class RolView extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator1)
-                            .addComponent(txtNombreRol, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)))
+                            .addComponent(txtNombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)))
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(179, 179, 179)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
@@ -185,9 +185,9 @@ public class RolView extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,9 +214,9 @@ public class RolView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreRolMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreRolMousePressed
-        txtNombreRol.setText("");
-    }//GEN-LAST:event_txtNombreRolMousePressed
+    private void txtNombreUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreUsuarioMousePressed
+        txtNombreUsuario.setText("");
+    }//GEN-LAST:event_txtNombreUsuarioMousePressed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         
@@ -225,14 +225,14 @@ public class RolView extends javax.swing.JFrame {
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         RolController controller = new RolController();
         Rol rol = new Rol();
-        rol.setRol(this.txtNombreRol.getText());
+        rol.setRol(this.txtNombreUsuario.getText());
         controller.insertarRegistro(rol);
         controller.mostrarRegistros(modeloTabla);
     }//GEN-LAST:event_btnGuardarMouseClicked
 
     private void tablaRolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaRolMouseClicked
       
-      txtNombreRol.setText(tablaRol.getValueAt(tablaRol.getSelectedRow(), 1).toString());  
+      txtNombreUsuario.setText(tablaRol.getValueAt(tablaRol.getSelectedRow(), 1).toString());  
       idRol = Integer.parseInt(tablaRol.getValueAt(tablaRol.getSelectedRow(), 0).toString()); 
       RolController controller = new RolController();
         if (evt.getClickCount()==2) {
@@ -265,16 +265,16 @@ public class RolView extends javax.swing.JFrame {
         
         RolController controller = new RolController();
         Rol rol = new Rol();
-        rol.setRol(txtNombreRol.getText());
+        rol.setRol(txtNombreUsuario.getText());
         controller.actualizarRegistro(rol,idRol);
         controller.mostrarRegistros(modeloTabla);
-        txtNombreRol.setText(" "); 
+        txtNombreUsuario.setText(" "); 
         
     }//GEN-LAST:event_btnActualizarMouseClicked
 
-    private void txtNombreRolMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreRolMouseReleased
+    private void txtNombreUsuarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreUsuarioMouseReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreRolMouseReleased
+    }//GEN-LAST:event_txtNombreUsuarioMouseReleased
 
     /**
      * @param args the command line arguments
@@ -295,7 +295,7 @@ public class RolView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RolView().setVisible(true);
+                new usuarioView().setVisible(true);
             }
         });
     }
@@ -311,6 +311,6 @@ public class RolView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tablaRol;
-    private javax.swing.JTextField txtNombreRol;
+    private javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
