@@ -26,7 +26,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
         try {
             conexion = new Conexion();//se establece la conexion
             connection = conexion.getConnection();//se obtiene la conexion de la base de datos 
-            String query = "call crearUsuario('" + usuario.getUser() +","+ usuario.getPassword()+ "')";
+            String query = "call crearUsuario('" + usuario.getUser() +"','"+ usuario.getPassword()+ "')";
             stm = connection.createStatement();
             stm.execute(query);
             stm.close();
@@ -56,9 +56,8 @@ public class UsuarioModelImpl implements IUsuarioModel {
                 usuario.setIdUsuario(rs.getInt("idUsuario"));
                 usuario.setUser(rs.getString("usr"));
                 listaUsuario.add(usuario);
-            }
-            
-            System.out.println(listaUsuario.size());
+            }           
+           
 
             stm.close();
             connection.close();

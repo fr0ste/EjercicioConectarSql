@@ -1,20 +1,13 @@
 package view;
 
-import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
-import com.jtattoo.plaf.aero.AeroLookAndFeel;
-import com.jtattoo.plaf.graphite.GraphiteLookAndFeel;
-import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
-import entity.Rol;
-import controller.RolController;
+
 import controller.UsuarioController;
 import entity.Usuario;
-import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.basic.BasicLookAndFeel;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.table.DefaultTableModel;
 
@@ -249,6 +242,7 @@ public class usuarioView extends javax.swing.JFrame {
        UsuarioController controller = new UsuarioController();
         Usuario usuario = new Usuario();
         usuario.setUser(this.txtNombreUsuario.getText());
+        usuario.setPassword(String.valueOf(this.passUsuario.getPassword()));
         controller.insertarRegistro(usuario);
         controller.mostrarRegistros(modeloTabla);
     }//GEN-LAST:event_btnGuardarMouseClicked
