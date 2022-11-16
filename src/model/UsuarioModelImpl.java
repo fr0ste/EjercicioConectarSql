@@ -26,13 +26,13 @@ public class UsuarioModelImpl implements IUsuarioModel {
         try {
             conexion = new Conexion();//se establece la conexion
             connection = conexion.getConnection();//se obtiene la conexion de la base de datos 
-            String query = "call GuardarRol('" + usuario.getUser() + "')";
+            String query = "call crearUsuario('" + usuario.getUser() +","+ usuario.getPassword()+ "')";
             stm = connection.createStatement();
             stm.execute(query);
             stm.close();
             connection.close();
         } catch (SQLException e) {
-            System.out.println("");
+            System.out.println(e.getMessage());
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UsuarioModelImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,7 +82,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
         try {
             conexion = new Conexion();//se establece la conexion
             connection = conexion.getConnection();//se obtiene la conexion de la base de datos 
-            String query = "call EliminarRol('" + usuario.getIdUsuario() + "')";
+            String query = "call eliminarUsuario('" + usuario.getId() +"')";
             stm = connection.createStatement();
             stm.execute(query);
             connection.close();
@@ -106,7 +106,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
 
             connection = conexion.getConnection(); //se obtiene la conexion de la base de da
 
-            String query = "call BuscarRol('" + idUsuario + "')";
+            String query = "call BuscarUsuario('" + idUsuario + "')";
             stm = connection.createStatement();
 
             rs = stm.executeQuery(query);
