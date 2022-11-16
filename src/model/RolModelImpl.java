@@ -135,5 +135,5 @@ public class RolModelImpl implements IRolModel {
             Logger.getLogger(RolModelImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
 }

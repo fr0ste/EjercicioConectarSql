@@ -47,16 +47,18 @@ public class UsuarioModelImpl implements IUsuarioModel {
             ResultSet rs;
             conexion = new Conexion();//se establece la conexion
             connection = conexion.getConnection();//se obtiene la conexion de la base de datos 
-            String query = "call mostrarRol()";
+            String query = "call mostrarUsuario()";
             stm = connection.createStatement();
             rs = stm.executeQuery(query);
 
             while (rs.next()) {
                 Usuario usuario = new Usuario();
                 usuario.setIdUsuario(rs.getInt("idUsuario"));
-                usuario.setUser(rs.getString("usuario"));
+                usuario.setUser(rs.getString("usr"));
                 listaUsuario.add(usuario);
             }
+            
+            System.out.println(listaUsuario.size());
 
             stm.close();
             connection.close();
@@ -129,11 +131,11 @@ public class UsuarioModelImpl implements IUsuarioModel {
     }
 
     @Override
-    public void actualizarRegistro(Usuario usuario, Usuario usuarioNuevo) {
+    public void actualizarRegistro(Usuario usuario, int id) {
         try {
             conexion = new Conexion();//se establece la conexion
             connection = conexion.getConnection();//se obtiene la conexion de la base de datos 
-            String query = "call actualizarRol('" + usuario.getIdUsuario() + "','" + usuarioNuevo.getUser() + "')";              
+            String query = "call actualizarRol('" + id + "','" + usuario.getUser() + "')";              
             stm = connection.createStatement();         
             stm.execute(query);
             JOptionPane.showMessageDialog(null, "Actualizacion Exitosa");

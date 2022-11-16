@@ -6,6 +6,8 @@ import com.jtattoo.plaf.graphite.GraphiteLookAndFeel;
 import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
 import entity.Rol;
 import controller.RolController;
+import controller.UsuarioController;
+import entity.Usuario;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -23,14 +25,13 @@ import javax.swing.table.DefaultTableModel;
 public class usuarioView extends javax.swing.JFrame {
 
     private DefaultTableModel modeloTabla;
-    private int idRol;
-    private String nombreRol;
+    private int idUsuario;
+    private String nombreUsuario;
     public usuarioView() {
         
         initComponents();
         modeloTabla = (DefaultTableModel) tablaRol.getModel();
-         RolController controller = new RolController();
-        
+         UsuarioController controller = new UsuarioController();       
         
         controller.mostrarRegistros(modeloTabla);
     }
@@ -60,7 +61,6 @@ public class usuarioView extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GESTIÓN DE USUARIO");
 
@@ -76,11 +76,9 @@ public class usuarioView extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre del usuario");
 
         txtNombreUsuario.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
         txtNombreUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombreUsuario.setText("Inserte el nombre de usuario");
         txtNombreUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -223,32 +221,32 @@ public class usuarioView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
-        RolController controller = new RolController();
-        Rol rol = new Rol();
-        rol.setRol(this.txtNombreUsuario.getText());
-        controller.insertarRegistro(rol);
+       UsuarioController controller = new UsuarioController();
+        Usuario usuario = new Usuario();
+        usuario.setUser(this.txtNombreUsuario.getText());
+        controller.insertarRegistro(usuario);
         controller.mostrarRegistros(modeloTabla);
     }//GEN-LAST:event_btnGuardarMouseClicked
 
     private void tablaRolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaRolMouseClicked
       
       txtNombreUsuario.setText(tablaRol.getValueAt(tablaRol.getSelectedRow(), 1).toString());  
-      idRol = Integer.parseInt(tablaRol.getValueAt(tablaRol.getSelectedRow(), 0).toString()); 
-      RolController controller = new RolController();
+      idUsuario = Integer.parseInt(tablaRol.getValueAt(tablaRol.getSelectedRow(), 0).toString()); 
+      UsuarioController controller = new UsuarioController();
         if (evt.getClickCount()==2) {
             Icon icono = new ImageIcon("/home/labingsw05/NetBeansProjects/Torneo/src/view/usuario2.png");
-            Rol rol = controller.buscarRegistro(idRol);
-            JOptionPane.showMessageDialog(null, rol.getIdRol() + " "+ rol.getRol(), "resultado", JOptionPane.DEFAULT_OPTION, icono);
+            Usuario usuario = controller.buscarRegistro(idUsuario);
+            JOptionPane.showMessageDialog(null, usuario.getIdUsuario()+ " "+ usuario.getUser(), "resultado", JOptionPane.DEFAULT_OPTION, icono);
         }
    
        
     }//GEN-LAST:event_tablaRolMouseClicked
 
     private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
-        RolController controller = new RolController();
-        Rol rol = new Rol();
-        rol.setIdRol(idRol);
-        controller.eliminarRegistro(rol);
+        UsuarioController controller = new UsuarioController();
+        Usuario usuario = new Usuario();
+        usuario.setId(idUsuario);
+        controller.eliminarRegistro(usuario);
         controller.mostrarRegistros(modeloTabla);
         
     }//GEN-LAST:event_btnEliminarMouseClicked
@@ -263,10 +261,10 @@ public class usuarioView extends javax.swing.JFrame {
 
     private void btnActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMouseClicked
         
-        RolController controller = new RolController();
-        Rol rol = new Rol();
-        rol.setRol(txtNombreUsuario.getText());
-        controller.actualizarRegistro(rol,idRol);
+        UsuarioController controller = new UsuarioController();
+        Usuario usuario = new Usuario();
+        usuario.setUser(txtNombreUsuario.getText());
+        controller.actualizarRegistro(usuario,idUsuario);
         controller.mostrarRegistros(modeloTabla);
         txtNombreUsuario.setText(" "); 
         
