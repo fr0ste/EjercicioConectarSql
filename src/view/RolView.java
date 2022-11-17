@@ -60,7 +60,6 @@ public class RolView extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("GESTIÓN DE ROLES");
 
@@ -80,7 +79,6 @@ public class RolView extends javax.swing.JFrame {
         jLabel2.setText("Nombre de Rol");
 
         txtNombreRol.setBackground(new java.awt.Color(204, 204, 204));
-        txtNombreRol.setForeground(new java.awt.Color(0, 0, 0));
         txtNombreRol.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombreRol.setText("Inserte el rol");
         txtNombreRol.addMouseListener(new java.awt.event.MouseAdapter() {
